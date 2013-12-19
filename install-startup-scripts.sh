@@ -13,9 +13,12 @@ cat > $start_lively_script <<"EOF"
 
 . $HOME/.nvm/nvm.sh
 PORT=9001
-DIR=$HOME/LivelyKernel
+DIR=/vagrant/LivelyKernel
 SCRIPT=$DIR/bin/lk-server.js
 FOREVER=forever
+
+# wait for vbox to be ready
+while [ ! -f $SCRIPT ]; do sleep 2; done
 
 if [ "$1" == "--stop" ]; then
    $FOREVER stop $SCRIPT
@@ -38,9 +41,11 @@ cat > $start_vwf_script <<"EOF"
 
 . $HOME/.nvm/nvm.sh
 PORT=3000
-DIR=$HOME/vwf
+DIR=/vagrant/vwf
 SCRIPT=$DIR/node-server.js
 FOREVER=forever
+
+while [ ! -f $SCRIPT ]; do sleep 2; done
 
 if [ "$1" == "--stop" ]; then
    $FOREVER stop $SCRIPT
@@ -48,7 +53,7 @@ else
     forever_out=`$FOREVER list | grep $PORT`
     if [ -z "$forever_out" ]; then
         cd $DIR
-        $FOREVER start $SCRIPT -a $HOME/LivelyKernel
+        $FOREVER start $SCRIPT -a /vagrant/LivelyKernel
     fi
 fi
 EOF
