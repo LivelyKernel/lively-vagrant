@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 cd /vagrant/
-git clone -b branch/morph https://github.com/virtual-world-framework/vwf --recursive
+if [ -d vwf ]; then rm -rf vwf; fi
+git clone -b branch/morph https://github.com/LivelyKernel/vwf --recursive
 
 cd /vagrant/vwf/
-ln -s $PWD $HOME/vwf
+ln -fs $PWD $HOME/vwf
 npm install
