@@ -13,7 +13,6 @@ function createInitdScript() {
 # /etc/init.d/$name
 #
 
-touch /var/lock/$name
 # carry out specific functions when asked to by the system
 case "\$1" in
     start)
