@@ -48,7 +48,7 @@ else
     forever_out=`$FOREVER list | grep $PORT`
     if [ -z "$forever_out" ]; then
         cd $DIR
-        $FOREVER start $SCRIPT
+        $FOREVER start $SCRIPT -a $HOME/LivelyKernel
     fi
 fi
 EOF
