@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # install nvm
-git clone https://github.com/creationix/nvm.git ~/.nvm
+git clone --branch v0.7.0 https://github.com/creationix/nvm.git ~/.nvm
 
 # make sure the shell knows about nvm
 if [ -z "`grep 'source nvm' $HOME/.profile`" ]; then echo 'source $HOME/.nvm/nvm.sh' >> $HOME/.profile; fi
