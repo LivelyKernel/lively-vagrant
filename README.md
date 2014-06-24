@@ -1,4 +1,4 @@
-## Vagrant files for setting up a [Lively Web](http://lively-web.org) inside a VirtualBox VM ##
+## Vagrant files for automated set up of a [Lively Web](http://lively-web.org) server inside a VirtualBox VM ##
 
 ### Prerequisites:
 
@@ -16,9 +16,11 @@ vagrant init rksm/lively
 vagrant up
 ```
 
-Once the vagrant setup is done your can visit a Lively world at [http://localhost:9011/welcome.html]() (on the host machine).
+Once the vagrant setup is done you can visit a Lively world at [http://localhost:9011/welcome.html]() (on the host machine).
 
 For more information please refer to the [vagrant documentation](https://docs.vagrantup.com/v2/getting-started/index.html).
+
+Except for the Web ports 9011 and 9012 and the ssh port 2222 the Lively server is completely isolated. I.e. it is not possible for the server or another process running inside the VM to access host data or processes.
 
 ---
 
