@@ -1,4 +1,4 @@
-## Vagrant files for setting up a VWF/Lively VM ##
+## Vagrant files for setting up a [Lively Web](http://lively-web.org) inside a VirtualBox VM ##
 
 ### Prerequisites:
 
@@ -8,14 +8,35 @@
 
 ### Usage
 
-Simply checkout this repository and run `vagrant up`. It will install and setup
-a virtualbox VM that has both Lively Kernel and VWF installed.
+To use the lively box:
 
-Lively is installed into `/home/vagrant/LivelyKernel` and vwf into
-`/home/vagrant/vwf`. Both directories are also accessible in the shared
-`/vagrant/`directory.
+```sh
+vagrant init rksm/lively
+vagrant up
+```
 
-A Lively server will auto-start on port 9001 and a vwf server on port 3000. Both
-ports are forwarded to the host system on ports 9101 and 9300. This means that
-when everything was installed and booted correctly you should be able to see vwf
-on [http://localhost:9300/]().
+Once the vagrant setup is done your can visit a Lively world at http://localhost:9101/welcome.html (on the host machine).
+
+For more information please refer to the [vagrant documentation](https://docs.vagrantup.com/v2/getting-started/index.html).
+
+### Rebuilding
+
+This is *not* necessary for just running the Lively image. However, for
+reference and if you want to rebuild this vagrant image you can run these
+commands:
+
+```sh
+git clone https://github.com/LivelyKernel/lively-vagrant .
+cd lively-vagrant
+vagrant up
+```
+
+Once the vagrant setup is done Lively is available at http://localhost:9101/ (on
+the host machine) and at http://localhost:9001/ (on the VM).
+
+To also package:
+
+```sh
+vagrant package --output lively.box
+rsync -zve 'ssh' --progress lively.box lively@lively-web.org:web/
+```

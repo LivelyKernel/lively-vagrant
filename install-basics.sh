@@ -2,7 +2,5 @@
 
 # basic stuff
 sudo apt-get update
-sudo apt-get -qy install \
-    build-essential \
-    libssl-dev curl git-core \
-    zip
+sudo apt-get -y install \
+    build-essential curl git-core zip

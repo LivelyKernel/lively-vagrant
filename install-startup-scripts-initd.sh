@@ -41,6 +41,3 @@ EOF
 
 createInitdScript lively-server $bin_dir/start-lively.sh
 service lively-server start
-
-createInitdScript vwf-server $bin_dir/start-vwf.sh
-service vwf-server start
