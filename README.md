@@ -11,11 +11,12 @@
 To use the lively box:
 
 ```sh
+mkdir -p ~/LivelyBox && cd ~/LivelyBox
 vagrant init rksm/lively
 vagrant up
 ```
 
-Once the vagrant setup is done your can visit a Lively world at [http://localhost:9101/welcome.html]() (on the host machine).
+Once the vagrant setup is done your can visit a Lively world at [http://localhost:9011/welcome.html]() (on the host machine).
 
 For more information please refer to the [vagrant documentation](https://docs.vagrantup.com/v2/getting-started/index.html).
 
