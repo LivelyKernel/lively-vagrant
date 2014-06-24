@@ -40,7 +40,7 @@ the host machine) and at [http://localhost:9001/]() (on the VM).
 To also package:
 
 ```sh
-$box=$(date "+%Y-%m-%d")_lively.box
+box=$(date "+%Y-%m-%d")_lively.box
 vagrant package --output $box
 rsync -zve 'ssh' --progress $box lively@lively-web.org:web/vagrant/
 ```
