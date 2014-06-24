@@ -34,12 +34,13 @@ cd lively-vagrant
 vagrant up
 ```
 
-Once the vagrant setup is done Lively is available at [http://localhost:9101/]() (on
+Once the vagrant setup is done Lively is available at [http://localhost:9011/]() (on
 the host machine) and at [http://localhost:9001/]() (on the VM).
 
 To also package:
 
 ```sh
-vagrant package --output lively.box
-rsync -zve 'ssh' --progress lively.box lively@lively-web.org:web/
+$box=$(date "+%Y-%m-%d")_lively.box
+vagrant package --output $box
+rsync -zve 'ssh' --progress $box lively@lively-web.org:web/vagrant/
 ```
