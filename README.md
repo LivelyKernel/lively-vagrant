@@ -16,7 +16,7 @@ vagrant init rksm/lively
 vagrant up
 ```
 
-Once the vagrant setup is done you can visit a Lively world at [http://localhost:9011/welcome.html]() (on the host machine).
+Once the vagrant setup is done you can visit a Lively world at [http://localhost:9011/welcome.html](http://localhost:9011/welcome.html) (on the host machine).
 
 For more information please refer to the [vagrant documentation](https://docs.vagrantup.com/v2/getting-started/index.html).
 
@@ -52,8 +52,8 @@ cd lively-vagrant
 vagrant up
 ```
 
-Once the vagrant setup is done Lively is available at [http://localhost:9011/]() (on
-the host machine) and at [http://localhost:9001/]() (on the VM).
+Once the vagrant setup is done Lively is available at [http://localhost:9011/](http://localhost:9011/) (on
+the host machine) and at [http://localhost:9001/](http://localhost:9011/) (on the VM).
 
 To also package:
 
