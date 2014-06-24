@@ -22,6 +22,22 @@ For more information please refer to the [vagrant documentation](https://docs.va
 
 ---
 
+## Removal
+
+TO remove thr VM and box run:
+
+```sh
+cd ~/LivelyBox && vagrant destroy
+```
+
+and
+
+```sh
+vagrant box remove rksm/lively
+```
+
+---
+
 ## Rebuilding
 
 This is *not* necessary for just running the Lively image. However, for
@@ -41,6 +57,9 @@ To also package:
 
 ```sh
 box=$(date "+%Y-%m-%d")_lively.box
-vagrant package --output $box
+vagrant package --output $box --vagrantfile Vagrantfile.deploy
 rsync -zve 'ssh' --progress $box lively@lively-web.org:web/vagrant/
 ```
+
+<!-- vagrant box add -c -f --name rksm/lively $box -->
+<!-- vagrant box add -c -f --name rksm/lively 2014-06-24_lively-debian7.box -->
