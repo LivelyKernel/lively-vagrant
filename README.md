@@ -1,3 +1,9 @@
+# *NOTE: This vagrant setup is deprecated.  Please use docker when you want an automated setup for Lively running in a VM: https://github.com/LivelyKernel/lively-docker*
+
+
+
+
+
 ## Vagrant files for automated set up of a [Lively Web](http://lively-web.org) server inside a VirtualBox VM ##
 
 ### Prerequisites:
